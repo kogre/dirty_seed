@@ -18,7 +18,7 @@ The gem provides 2 rake tasks.
 
 ### dump
 
-To create a seeds.rb file from your current database, use the `db_dump` task. The task writes out the file content to standard out, so you probably want to run the following command from within your Rails project folder. Caution: This overwrites your existing `seeds.rb` file.
+To create a seeds.rb file from your current database, use the `dump` task. The task writes out the file content to standard out, so you probably want to run the following command from within your Rails project folder. Caution: This overwrites your existing `seeds.rb` file.
 
 
 	$ rake dirty_seed:dump > db/seeds.rb
