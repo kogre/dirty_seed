@@ -23,13 +23,13 @@ namespace :dirty_seed do
   end
 
   desc "Dump all seed data"
-  task :dump_all => [:environment] do
+  task :dump => [:environment] do
     puts "# encoding: UTF-8"
     models.each{|m| seed_table m}
   end
 
   desc "Drop, create, migrate and seed database"
-  task :resetdb do
+  task :reset do
 
     Rake::Task['db:drop'].reenable
     Rake::Task['db:drop'].invoke
