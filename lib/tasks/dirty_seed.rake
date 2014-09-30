@@ -33,6 +33,8 @@ namespace :dirty_seed do
   task :dump => [:environment] do
     puts "# encoding: UTF-8"
     models.each{|m| seed_table m}
+    # reset primary key counter, needed for postgres when inserting explicit ids
+    put "ActiveRecord::Base.connection.tables.each { |t|     ActiveRecord::Base.connection.reset_pk_sequence!(t) }"
   end
 
   desc "Drop, create, migrate and seed database"
